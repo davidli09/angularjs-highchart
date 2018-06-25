@@ -1,0 +1,812 @@
+@import '~_styles/app/variables';
+
+@{app-prefix}-prototype1 {
+    @head-info-height: 124px;
+    @head-info-height-min: 60px;
+    @screen-threshold-min: @screen-md-min;
+
+    display: block;
+
+    @media (min-width: @screen-threshold-min) {
+        transition: all ease 0.5s;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    > [ng-scrollbars=''] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        > .mCustomScrollBox > .mCSB_container {
+            @media (min-width: @screen-threshold-min) {
+                height: 100%;
+            }
+        }
+    }
+
+    .tile-logo {
+        float: right;
+        margin-top: -25px;
+    }
+
+    .chart-area {
+        width: 100%;
+        height: ~"calc(100% - 29px)";
+        position: relative;
+    
+        .hc-graph {
+            width: 100%;
+            max-width: 452px;
+            height: 165px;
+            margin-left: auto;
+            margin-right: auto;
+
+            &.hc-health {
+                width: 179px;
+                height: 179px;
+            }
+
+            &.hc-financial {
+                width: 100%;
+                max-width: 150px;
+                height: 150px;
+            }
+        }
+
+        .hc-button {
+            width: 12px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: absolute;
+            bottom: 0;
+            font-size: 12px;
+
+            &.btn-next {
+                right: 0;
+            }
+
+            &.btn-prev {
+                left: 24px;
+            }
+
+            &.disabled {
+                border-color: @app-color-gray-lightest;
+                color: @app-color-gray-lightest;
+            }
+        }
+    }
+
+    .main-index {
+        padding: 20px 0;
+
+        @media (min-width: @screen-threshold-min) {
+            position: absolute;
+            top: @head-info-height;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .mCSB_inside > .mCSB_container {
+            margin-right: 0;
+        }
+    }
+
+    &.narrow-bar {
+        .main-index {
+            @media (min-width: @screen-threshold-min) {
+                top: @head-info-height-min;
+                transition: top ease 0.5s;
+            }
+        }
+    }
+
+    .demibold-gray {
+        font-weight: 600;
+        line-height: 1.3;
+        color: @app-color-gray;
+        letter-spacing: -0.5px;
+    }
+
+    @{app-prefix}-tile-container {
+        .center-block();
+        max-width: 1255px;
+    }
+
+    .main-link {
+        margin-top: 15px;
+        display: block;
+        font-size: 16px;
+        line-height: 16px;
+        color: @app-color-cyan;
+
+        &:after {
+            content: '';
+            display: inline-block;
+            background: url(../~_images/arrow-right-green.png) no-repeat;
+            width: 12px;
+            height: 11px;
+            margin-left: 5px;
+        }
+    }
+
+    #head-info {
+        transition: all ease 0.5s;
+        padding: 20px 0;
+        background: rgba(0, 0, 0, 0.2);
+        color: @app-color-white;
+        width: 100%;
+
+        .payslip {
+            text-align: center;
+
+            >div {
+                transition: all ease 0.5s;    
+                display: inline-block;
+                text-align: left;
+                cursor: pointer;
+            }
+
+            h5 {
+                display: none;
+            }
+
+            @{app-prefix}-amount {
+                margin-top: 0;
+
+                .title-top {
+                    color: @app-color-white;
+                    font-size: 15px;
+                }
+
+                .title-bottom {
+                    color: @app-color-white;
+                    font-size: 13px;
+                    margin-top: 4px;
+                }
+
+                .value-line {
+                    .value {
+                        transition: all ease 0.5s;
+                        color: @app-color-white;
+                        font-size: 38px;
+                    }
+                }
+            }
+
+            @media (max-width: @screen-xs-max) {
+                float: none;
+                text-align: center;
+            }
+        }
+
+        .vacation-day {
+            text-align: center;
+
+            h2 {
+                transition: all ease 0.5s;
+                font-size: 40px;
+                margin-bottom: 5px;
+            }
+
+            h5 {
+                margin-bottom: 5px;
+            }
+
+            @media (max-width: @screen-xs-max) {
+                margin-top: 20px;
+            }
+        }
+
+        .support {
+            text-align: center;
+
+            > div {
+                display: inline-block;
+                text-align: left;
+                margin-top: 10px;
+            }
+
+            h4 {
+                font-size: 20px;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    //Below one is for narrow-navbar when scrolling. Disabled temporarily.
+
+    &.narrow-bar {
+
+        @media (min-width: @screen-threshold-min) {
+            .hide-on-mini {
+                display: none;
+            }
+
+            #head-info {
+                padding: 5px 0;
+
+                h5 {
+                    display: inline-block;
+                }
+
+                .payslip {
+
+                    @{app-prefix}-amount {
+                        display: inline-block;
+                        margin-top: 10px;
+
+                        .title-top, .title-bottom {
+                            display: none;
+                        }
+
+                        .value-line > .value {
+                            display: inline-block;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .vacation-day {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+
+                    h2 {
+                        font-size: 30px;
+                        display: inline-block;
+                        margin-bottom: 0;
+                    }
+
+                    > div {
+                        display: inline-block;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .support {
+                    h4 {
+                        display: none;
+                    }
+
+                    > div {
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .chart-area {
+        img {
+            width: 100%;
+        }
+    }
+
+    .chart-legend {
+        margin-top: -30px;
+        float: right;
+    }
+
+    @{app-prefix}-tile[x="1"] {
+        .chart-title {
+            margin-top: 0;
+        }
+    }
+
+    #financial {
+
+        .chart-area {
+            height: auto;
+        }
+
+        @{app-prefix}-amount {
+            .title-top {
+                font-weight: 600;
+            }
+        }
+
+        .main-link {
+            margin-top: 60px;
+        }
+
+        .financial-pay {
+            cursor: pointer;
+
+            &.pay-gross {
+                @{app-prefix}-amount {
+                    .value { 
+                        color: #7da8c6;
+                    }
+                }
+            }
+
+            &.pay-deduction {
+                @{app-prefix}-amount {
+                    .value { 
+                        color: #97301f;
+                    }
+                }
+            }
+
+            &.pay-addition {
+                @{app-prefix}-amount {
+                    .value { 
+                        color: @app-color-gray;
+                    }
+                }
+            }
+        }
+
+        .date-bar {
+            background-color: #e2ebeb;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #2d2d2d;
+            display: inline-block;
+            padding: 0 5px;
+            width: 100%;
+            position: relative;
+            margin-bottom: 5px;
+
+            i {
+                color: @app-color-cyan;
+            }
+
+            span {
+                width: 100%;
+                text-align: center;
+                display: inline-block;
+            }
+
+            .fs-btn-next, .fs-btn-prev {
+                position: absolute;
+                top: 4px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url(~_images/arrow-left-green.png);
+                width: 10px;
+                height: 9px;
+                cursor: pointer;
+
+                &.disabled {
+                    filter: grayscale(100%);
+                    cursor: auto;
+                }
+            }
+
+            .fs-btn-next {
+                right: 3px;
+                transform: rotate(180deg);
+            }
+
+            .fs-btn-prev {
+                left: 3px;
+            }
+        }
+
+        @{app-prefix}-tile-unit > h2 {
+            margin-top: 10px;
+        }
+
+        &[x="1"] {
+            .border-line {
+                top: 55%;
+            }
+        }
+    }
+
+    #taxcenter {
+        @{app-prefix}-tile-unit {
+            &:nth-child(2) {
+                padding-top: @app-tile-unit-padding + 60px;
+
+                h6 {
+                    font-weight: 600;
+                    line-height: 1.5;
+                    color: @app-color-gray;
+                }
+            }
+        }
+
+        &[x='1'] {
+            @{app-prefix}-tile-unit {
+                &:nth-child(2) {
+                    padding-top: @app-tile-unit-padding + 20px;
+                }
+            }
+        }
+    }
+
+    #payout {
+        .brand-logo {
+            line-height: 60px;
+            display: block;
+        }
+
+        @{app-prefix}-tile-unit {
+            &:nth-child(2) {
+                .brand-logo {
+                    margin-top: 28px;
+                }
+            }
+        }
+
+        h6 {
+            font-weight: 600;
+            color: @app-color-gray;
+
+            span {
+                color: @app-color-cyan;
+            }
+        }
+    }
+
+    #market {
+        .brand-logo {
+            line-height: 90px;
+            display: block;
+        }
+
+        @{app-prefix}-tile-unit {
+            &:nth-child(2) {
+                padding-top: 45px;
+            }
+        }
+    }
+
+    #future {
+        .demibold-gray {
+            margin-bottom: 88px;
+        }        
+    }
+
+    #reward {
+        .redeem-block {
+            display: table;
+            width: 100%;
+            margin-bottom: 13px;
+
+            @{app-prefix}-amount, .btn-holder {
+                display: table-cell;
+                width: 50%;
+                vertical-align: bottom;
+
+                .value {
+                    color: @app-color-orange-light;
+                    font-size: 33px;
+                }
+
+                .currency {
+                    color: @app-color-orange-dark;
+                    font-size: 11px;
+                }
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        .logo-bar {
+            padding-bottom: 10px;
+            border-bottom: 1px dotted @app-tile-border-color;
+            margin-bottom: 10px;
+
+            img {
+                vertical-align: bottom;
+                padding-bottom: 3px;
+                margin-right: 3px;
+
+                &:nth-child(3) {
+                    padding-bottom: 1px !important;
+                }
+            }
+
+            h6 {
+                color: @app-color-gray;
+                font-size: 11px;
+                display: inline-block;
+            }
+        }
+
+        h5 {
+            font-size: 13px;
+            font-weight: 600;
+            color: @app-color-gray;
+            margin-bottom: 5px;
+        }
+
+        .reward-detail {
+            padding-right: 15px;
+            background-image: url(~_images/arrow-right-orange.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            margin-bottom: 5px;
+
+            h6 {
+                float: left;
+            }
+
+            @{app-prefix}-amount {
+                float: right;
+                margin-top: 0;
+
+                .value-line {
+                    margin-top: 0;
+
+                    .value {
+                        color: @app-color-orange;
+                        font-size: 15px;
+                    }
+
+                    .currency {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+
+    #health {
+        @{app-prefix}-tile-unit {
+            > h1 {
+                margin-bottom: 20px;
+            }
+
+            &:nth-child(2) {
+                padding-top: @app-tile-unit-padding + 20px;
+                padding-left: @app-tile-unit-padding;
+                padding-right: @app-tile-unit-padding;
+                text-align: center;
+
+                .chart-title {
+                    width: 100%;
+                    margin-top: -40px;
+                }
+
+                .chart-legend {
+                    width: 100%;
+                    margin-top: -20px;
+                }
+
+                .chart-value {
+                    color: @app-color-cyan;
+                    font-size: 18px;
+                    text-align: center;
+                    position: relative;
+                    float: left;
+                    width: 100%;
+                    margin-top: -25px;   
+                }
+
+                .chart-logo {
+                    position: relative;
+                    margin-top: -220px;
+                    z-index: 1;
+                    width: auto;
+                }
+
+                h6 {
+                    position: relative;
+
+                    i {
+                        margin-left: 3px;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                @{app-prefix}-amount {
+                    position: relative;
+                    padding-left: 40px;
+
+                    .title-top {
+                        font-weight: 600;
+                    }
+
+                    icon {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 38px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            &:nth-child(4) {
+                text-align: center;
+                padding-top: 10px;
+
+                @{app-prefix}-amount {
+                    max-width: 150px;
+                    margin: 20px auto 30px;
+                }
+            }
+        }
+
+        &[x='2'] {
+            .border-line1, .border-line2 {
+                position: absolute;
+                border-left: 1px dotted @app-tile-border-color;
+                right: 50%;
+            }
+
+            .border-line1 {
+                top: @app-tile-unit-padding;
+                bottom: ~"calc(50% + 18px)";
+            }
+
+            .border-line2 {
+                top: ~"calc(50% + 18px)";
+                bottom: @app-tile-unit-padding;
+            }
+
+            .border-line3, .border-line4 {
+                position: absolute;
+                border-top: 1px dotted @app-tile-border-color;
+                top: 50%;
+            }
+
+            .border-line3 {
+                left: @app-tile-unit-padding;
+                right: ~"calc(50% + 18px)";
+            }
+
+            .border-line4 {
+                left: ~"calc(50% + 18px)";
+                right: @app-tile-unit-padding;
+            }
+        }
+
+        &[x='1'] {
+            .border-line1, .border-line2, .border-line3 {
+                position: absolute;
+                left: @app-tile-unit-padding;
+                right: @app-tile-unit-padding;
+                border-top: 1px dotted @app-tile-border-color;
+            }
+
+            .border-line1 {
+                top: 25%;
+            }
+
+            .border-line2 {
+                top: 50%;
+            }
+
+            .border-line3 {
+                top: 75%;
+            }
+        }
+    }
+
+    #deduction {
+        position: relative;
+
+        @{app-prefix}-tile-unit {
+            &:nth-child(1) {
+                padding-right: @app-tile-unit-padding + 15px;
+            }
+
+            &:nth-child(2) {
+                padding-top: @app-tile-unit-padding + 38px;
+                padding-left: @app-tile-unit-padding + 15px;
+            }
+        }
+
+        &[x="2"] {
+            .border-line {
+                top: 50%;
+                left: @app-tile-unit-padding;
+                right: @app-tile-unit-padding;
+                border-left: none;
+                border-top: 1px dotted @app-tile-border-color;
+            }
+        }
+
+        &[x="2"], &[x="1"] {
+            @{app-prefix}-tile-unit {
+                padding-left: @app-tile-unit-padding;
+                padding-right: @app-tile-unit-padding;
+            }
+        }
+    }
+
+    #imburse {
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .tile-logo {
+            margin-top: -35px;
+        }
+
+        .imburse-bar {
+            background-color: #fff;
+            border-left: 6px solid #199f47;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 2px;
+
+            &.yellow-border {
+                border-color: #f19929;
+            }
+
+            &.red-border {
+                border-color: #bd1f42;
+            }
+        }
+
+        span {
+            font-size: 12px;
+            font-weight: 500;
+            color: @app-color-gray;
+        }
+
+        .date-part {
+            width: 100px;
+            display: inline-block;
+        }
+
+        .amount-detail {
+            float: right;
+            padding-right: 15px;
+            background-image: url(~_images/arrow-right-gray-short.png);
+            background-repeat: no-repeat;
+            background-position: right;
+
+            @{app-prefix}-amount {
+                margin-top: 0;
+                display: inline-block;
+
+                .value-line {
+                    margin-top: 0;
+
+                    .value {
+                        font-size: 15px;
+                        color: @app-color-cyan;
+                    }
+                }
+            }
+        }
+
+        .amount-desc {
+            span {
+                font-weight: 600;
+            }
+
+            &.warning {
+                color: #bd1f42;
+            }
+        }
+
+        .main-link {
+            margin-top: 10px;
+            float: right;
+        }
+    }
+
+    #comparison {
+        @media (max-width: 1234px) {
+            .chart-legend {
+                display: none;
+            }
+        }
+    }
+
+    #pay-history {
+        @media (max-width: 736px) {
+            .chart-legend {
+                display: none;
+            }
+        }
+    }
+}

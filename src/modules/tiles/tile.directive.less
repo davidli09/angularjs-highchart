@@ -1,0 +1,45 @@
+@import '~_styles/app/variables';
+
+@{app-prefix}-tile {
+    .app-tile-style-mix();
+    position: relative;
+    background-color: #f4f4f4;
+
+    &, > * {
+        transition: all ease .5s;
+    }
+
+    //@{app-prefix}-tile-unit:first-of-type {
+    //    padding-top: 30px;
+    //
+    //    > h1 {
+    //        position: absolute;
+    //    }
+    //}
+
+    // TODO components hard coupling: defining borders sizes here is a bad idea since @app-tile-unit-padding is not constant value for the any app tile
+    // so these borders should either:
+    // - be defined outside of the tile component
+    // - be defined using percentage value instead of the @app-tile-unit-padding variable
+    &.with-border {
+        &[x='2'], &[x='4'] {
+            .border-line {
+                position: absolute;
+                top: @app-tile-unit-padding /* + 20px*/;
+                bottom: @app-tile-unit-padding;
+                right: 50%;
+                border-left: 1px dotted @app-tile-border-color;
+            }
+        }
+
+        &[x='1'] {
+            .border-line {
+                position: absolute;
+                top: 50%;
+                left: @app-tile-unit-padding;
+                right: @app-tile-unit-padding;
+                border-bottom: 1px dotted @app-tile-border-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+@import './../lib/variables';
+@import './variables-tile';
+
+@app-prefix: sfpay;
+
+@app-color-yellow: #eed506;
+@app-color-white: white;
+@app-color-black: black;
+@app-color-gray: #6c6c6c;
+@app-color-gray-lighter: #969696;
+@app-color-gray-lightest: #eaeaeb;
+@app-color-gray-blue: #cfd8e5;
+@app-color-cyan: #0b9b92;
+@app-color-cyan-light: #aab9b8;
+@app-color-cyan-lighter: #ddeae8;
+@app-color-green: #43b758;
+@app-color-green-light: #069b92;
+@app-color-orange: #f17322;
+@app-color-orange-light: #f49b1e;
+@app-color-orange-dark: #695422;
+@app-color-blue-light: #becee2;
+@app-color-blue-border: #d7dfe9;
+@app-color-blue: #3160a4;
+@app-color-green-map: #36a038;
+@app-color-yellow-map: #de9f27;
+@app-color-red-map: #9c121d;
+@app-color-gray-map: #98a7bd;
+
+// @app-padding-base: 18px;
+@app-padding-base: (@grid-gutter-width / 2);
+@app-header-height: 57px;
+
+// TODO rename to the global full screen view horizontal margin variable
+@app-explorer-margin-horizontal: 20px;
+
+.app-mix-font-awesome() {
+    font: normal normal normal 14px/1 FontAwesome;
+}
+
+.app-mix-font-awesome-icon() {
+    .app-mix-font-awesome();
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.app-mix-explorer-section-title() {
+    color: @app-color-white;
+    font-size: 22px;
+    font-weight: 200;
+    margin-left: 22px;
+}

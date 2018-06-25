@@ -1,0 +1,19 @@
+@import './../lib/variables';
+
+@app-tile-unit-padding: 18px;
+@app-tile-border-color: @app-color-gray-lighter;
+
+.app-tile-style-mix() {
+    background-color: @app-color-white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.app-tile-unit-padding-mix(@padding: @app-tile-unit-padding) {
+    padding: @padding;
+
+    > h1 {
+        top: @padding;
+        left: @padding;
+    }
+}

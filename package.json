@@ -1,0 +1,77 @@
+{
+  "private": true,
+  "version": "0.0.1",
+  "name": "angularjs-highchart-web-app",
+  "company": "Self",
+  "description": "Description",
+  "author": "Author Name",
+  "scripts": {
+    "build": "better-npm-run build",
+    "start": "better-npm-run start"
+  },
+  "betterScripts": {
+    "build": {
+      "command": "webpack",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "start": {
+      "command": "webpack-dev-server",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-datetime": "3.0.3",
+    "angular-filter": "0.5.9",
+    "angular-resource": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "angular-touch": "1.5.8",
+    "angular-ui-bootstrap": "1.3.3",
+    "angular-ui-router": "1.0.0-beta.1",
+    "autopolyfiller-loader": "0.3.3",
+    "bootstrap": "3.3.7",
+    "bundle-loader": "0.5.4",
+    "font-awesome": "4.6.3",
+    "highcharts": "4.2.5",
+    "highcharts-ng": "0.0.11",
+    "jquery": "2.2.4",
+    "jquery-mousewheel": "3.1.13",
+    "lodash": "4.14.0",
+    "ng-focus-on": "0.2.2",
+    "ng-scrollbars": "0.0.10",
+    "nya-bootstrap-select": "2.0.11",
+    "toastr": "2.1.2",
+    "ui-router-route-to-components": "github:softsimon/ui-router-route-to-components"
+  },
+  "devDependencies": {
+    "json-loader": "0.5.4",
+    "autoprefixer": "6.3.7",
+    "better-npm-run": "0.0.10",
+    "css-loader": "0.23.1",
+    "cssnano": "3.7.3",
+    "exports-loader": "0.6.3",
+    "expose-loader": "0.7.1",
+    "extract-text-webpack-plugin": "1.0.1",
+    "file-loader": "0.9.0",
+    "html-loader": "0.4.3",
+    "html-webpack-plugin": "2.22.0",
+    "imports-loader": "0.6.5",
+    "less": "2.7.1",
+    "less-loader": "2.2.3",
+    "null-loader": "0.1.1",
+    "postcss-loader": "0.9.1",
+    "raw-loader": "0.5.1",
+    "style-loader": "0.13.1",
+    "ts-loader": "0.8.2",
+    "typescript": "1.8.10",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1",
+    "webpack-merge": "0.14.1"
+  }
+}

@@ -1,0 +1,46 @@
+@import '~_styles/app/variables';
+
+@{app-prefix}-app {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // background: url(~_images/background.jpg);
+    background-size: cover;
+
+    &.blue-mode {
+        background-image: url(~_images/background2.jpg);
+
+        [ui-view='header'] {
+            background-color: rgba(255, 255, 255, 0.1);
+        }        
+    }
+
+    &.green-mode {
+        background-image: url(~_images/background.jpg);
+    }
+
+    &.index-mode {
+        [ui-view='content'] {
+            position: relative;
+            top: 0;
+            height: 100%;
+        }
+    }
+
+    [ui-view='header'] {
+        padding: 0 @app-explorer-margin-horizontal;
+    }
+
+    [ui-view='content'] {
+        // TODO components hard coupling: this rule assumes header always has @app-header-height height value, but it potentially can have any height
+        top: @app-header-height;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

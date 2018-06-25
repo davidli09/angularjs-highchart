@@ -1,0 +1,127 @@
+<div ng-scrollbars>
+    <div id="head-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 payslip">
+                    <div ng-click="$ctrlPrototype1.showPayDetail()">
+                        <h5>Payslip</h5>
+                        <sfpay-amount title-top="'Current payslip (June)'"
+                                      title-bottom="'will be paid in 2 days'"
+                                      value="3521.29"></sfpay-amount>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="vacation-day">
+                        <h2>14</h2>
+                        <div>
+                            <h5>Vacation days available</h5>
+                            <h6 class="hide-on-mini">Next 3 in 22 Days</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-sm-4 support">
+                    <div>
+                        <h4>How can we help?</h4>
+                        <div class="search-bar">
+                            <input type="text" class="search-input" placeholder="Ask a question...">
+                            <button type="button" class="btn btn-sm btn-blue">Submit</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="main-index" ng-scrollbars ng-scrollbars-config="$ctrlPrototype1.$config.scrollbarsTiles">
+        <sfpay-tile-container unit-size="{width: 239, height: 230}" gap="10">
+            <!-- row 1 -->
+            <sfpay-tile max-columns="1" row="1" class="with-border" id="financial">
+                <sfpay-tile-unit size="2">
+                    <h1>Current Pay Statement</h1>
+                </sfpay-tile-unit>
+            </sfpay-tile>
+            <sfpay-tile max-columns="2" row="1">
+                <sfpay-tile-unit size="2" size-column-1="1">
+                    <h1>Pay History</h1>
+                    <div class="chart-area" id="pay-history">
+                        <span class="chart-legend">
+                            <span class="blue-line">Payout</span>
+                            <span class="light-blue-line">Deductions</span>
+                        </span>
+                        <!-- <img src="~_images/chart-earning1.png"> -->
+                        <highchart class="hc-history hc-graph" config="$ctrlPrototype1.$s.highchartsPayHistory"></highchart>
+                        <span class="hc-button btn-next fa fa-angle-right" ng-click="$ctrlPrototype1.hcNextPayout()" ng-class="{disabled: $ctrlPrototype1.$s.payoutInfo.current==6}"></span>
+                        <span class="hc-button btn-prev fa fa-angle-left" ng-click="$ctrlPrototype1.hcPrevPayout()" ng-class="{disabled: $ctrlPrototype1.$s.payoutInfo.current==0}"></span>
+                    </div>
+
+                </sfpay-tile-unit>
+            </sfpay-tile>
+            <sfpay-tile max-columns="2" row="1" id="comparison">
+                <sfpay-tile-unit size="2" size-column-1="1">
+                    <h1>Earnings Comparison</h1>
+                </sfpay-tile-unit>
+            </sfpay-tile>
+
+            <!-- row 2 -->
+            <sfpay-tile max-columns="2" row="2" class="with-border" id="payout">
+                <sfpay-tile-unit size="1">
+                    <h1>Payout Advances</h1>
+                </sfpay-tile-unit>
+                <sfpay-tile-unit size="1">
+                </sfpay-tile-unit>
+                <div class="border-line"></div>
+            </sfpay-tile>
+            <sfpay-tile max-columns="2" row="2" id="health">
+                <sfpay-tile-unit size="1">
+                    <h1>Health & Wellness</h1>
+                </sfpay-tile-unit>
+                <sfpay-tile-unit size="1">
+                </sfpay-tile-unit>
+                <sfpay-tile-unit size="1">
+                </sfpay-tile-unit>
+                <sfpay-tile-unit size="1">
+                </sfpay-tile-unit>
+                <div class="border-line1"></div>
+                <div class="border-line2"></div>
+                <div class="border-line3"></div>
+                <div class="border-line4"></div>
+            </sfpay-tile>
+            <!-- row 3 -->
+            <sfpay-tile max-columns="2" row="3" class="with-border" id="taxcenter">
+                <sfpay-tile-unit size="1">
+                    <h1>Tax Center</h1>
+                </sfpay-tile-unit>
+                <sfpay-tile-unit size="1">
+                    <h6>Download or export your tax forms and payroll info</h6>
+                    <a class="main-link" href sfpay-app-center>Download</a>
+                    <a class="main-link" href="" sfpay-app-center>Export to H&R Block</a>
+                </sfpay-tile-unit>
+                <div class="border-line"></div>
+            </sfpay-tile>
+            <sfpay-tile max-columns="1" row="3" id="reward">
+                <sfpay-tile-unit size="1">
+                    <h1>Rewards</h1>
+                </sfpay-tile-unit>
+            </sfpay-tile>
+            <!-- row 4 -->
+            <sfpay-tile max-columns="2" row="4" class="with-border" id="market">
+                <sfpay-tile-unit size="1">
+                    <h1>Market Place</h1>
+                </sfpay-tile-unit>
+                <sfpay-tile-unit size="1">
+                </sfpay-tile-unit>
+                <div class="border-line"></div>
+            </sfpay-tile>
+            <sfpay-tile max-columns="1" row="4" id="future">
+                <sfpay-tile-unit size="1">
+                    <h1>Future Planning</h1>
+                </sfpay-tile-unit>
+            </sfpay-tile>
+            <sfpay-tile max-columns="2" row="4" id="imburse">
+                <sfpay-tile-unit size="2">
+                    <h1>Reimbursements</h1>
+                </sfpay-tile-unit>
+            </sfpay-tile>
+        </sfpay-tile-container>
+    </div>
+</div>

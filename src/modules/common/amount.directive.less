@@ -1,0 +1,114 @@
+@import '~_styles/app/variables';
+
+//@font-face {
+//    font-family: 'BentonSans';
+//    src: url(~_fonts/bentonsans-regular.otf);
+//    font-weight: normal;
+//}
+
+//@font-face {
+//    font-family: 'BentonSans';
+//    src: url(~_fonts/bentonsans-medium.otf);
+//    font-weight: 600;
+//}
+
+@{app-prefix}-amount {
+    display: block;
+    margin-top: 10px;
+
+    > .title-top, > .title-bottom {
+        color: @app-color-gray;
+        font-size: 13px;
+        letter-spacing: -0.6px;
+    }
+
+    > .title-top {
+        margin-bottom: 0;
+        font-weight: normal;
+    }
+
+    > .title-bottom {
+        margin-top: -4px;
+    }
+
+    > .value-line {
+        line-height: 1;
+        margin-top: 3px;
+        font-family: 'BentonSans', sans-serif;
+        font-weight: 300;
+
+        > .value {
+            font-size: 24px;
+            color: @app-color-cyan;
+        }
+
+        > .currency {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    &.size-md {
+        > .value-line {
+            > .value {
+                font-size: 35px;
+            }
+        }
+
+        > .title-top {
+            font-weight: 600;
+        }
+
+        > .title-bottom {
+            margin-top: 2px;
+            font-weight: 600;
+        }
+    }
+
+    &.size-mdnorm {
+        > .value-line {
+            .value {
+                font-size: 26px;
+            }
+        }
+    }
+
+    &.size-normal {
+        > .value-line {
+            > .value {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &.size-xs {
+        margin-top: 0;
+        
+        > .value-line {
+            > .value {
+                font-size: 12px;
+            }
+
+            > .currency {
+                font-size: 9px;
+            }
+        }
+    }
+
+    &.color-gray {
+        > .value-line {
+            > .value, > .currency {
+                color: @app-color-gray;
+            }
+        }
+    }
+
+    &.color-black {
+        > .value-line {
+            > .value, > .currency {
+                color: @app-color-black;
+            }
+        }
+    }
+}
